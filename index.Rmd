@@ -1,0 +1,78 @@
+---
+title: "Data Visualization"
+subtitle: "Using ggplot"
+author: "Meenakshi Kushwaha"
+institute: "ILK Labs, Bangalore"
+date: "2020/08/28 (updated: `r Sys.Date()`)"
+output:
+  xaringan::moon_reader
+---
+class:center, middle
+
+##Fundamentals of Data Visualization
+Claus Wilke  
+https://clauswilke.com/dataviz/  
+
+
+##R for Data Science
+Hadley Wickham & Garrett Grolemund  
+https://r4ds.had.co.nz/data-visualisation.html
+
+## GGplot flipbook
+Gina Reynolds
+https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1
+
+
+---
+name:index
+## [Session 1](#Session1): Introduction | Aesthetics
+## [Session 2](#Session2): 
+## [Session 3](#Session3): 
+## [Session 4](#Session4): 
+## [Session 5](#Session5): 
+
+???
+hyperlink the slides
+---
+class:middle, center
+name: Session1
+# Session1
+## 28th Aug 2020
+## Aesthetics
+---
+class:middle, center
+###"All data visualizations map **data values** into **quantifiable features** of the resulting graphic. We refer to these features as **aesthetics**."
+Fundamentals of Data Visualization *by Claus Wilke*
+---
+# Types of Aesthetics
+![](images/common-aesthetics-1.png)
+
+**Remember aesthetics depend on the geometry**. There are more examples that we will cover later...
+
+---
+![](images/var_types.png)
+---
+#Shapes in R
+![](images/shapes-1.png)
+---
+# Scales map data values onto aesthetics
+![](images/basic-scales-example-1.png)
+---
+![](images/mtcars-five-scale-1.png)
+---
+class: middle, center
+
+#data+aes+geometry
+
+---
+![](images/horst_ggplot.jpeg)
+---
+## GGplot flipbook
+Gina Reynolds  
+
+###On your own   
+https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1  
+###In session  
+https://evamaerey.github.io/ggplot2_grammar_guide/data_aes_geom.html#37
+
+---
