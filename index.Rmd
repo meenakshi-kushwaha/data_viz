@@ -26,7 +26,7 @@ https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html#1
 ---
 name:index
 ## [Session 1](#Session1): Introduction | Aesthetics
-## [Session 2](#Session2): Color Scales
+## [Session 2](#Session2): Facets and statistics in ggplot
 ## [Session 3](#Session3): 
 ## [Session 4](#Session4): 
 ## [Session 5](#Session5): 
@@ -80,8 +80,90 @@ class:middle, center
 name: Session2
 # Session 2
 ## 18th Sep 2020
-## Color scales
+## Facets and Statistics
 ---
+
+#data+aesthetics+geom
+--
+```{r eval=FALSE}
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(mapping = aes(<MAPPINGS>))
+```
+--
+- **facets**
+- **statistics**
+- coordinates
+- theme
+---
+#Example
+```{r eval=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy))
+```
+![](images/ggplot.png)
+
+---
+#Example
+```{r eval=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy, color = class))
+```
+![](images/ggplot1.png)
+---
+# Facets
+- Useful for categorical variables
+- Split your plot into facets or subplots 
+- `facet_wrap()`
+
+```{r eval=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+```
+---
+```{r eval=FALSE}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = displ, y = hwy)) + 
+  facet_wrap(~ class, nrow = 2)
+```
+![](images/ggplot2.png)
+---
+# Statistical transformations
+- When ggplot computes a value to show on the plot
+```{r eval=FALSE}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut))
+```
+---
+```{r eval=FALSE}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut))
+```
+![](images/ggplot4.png)
+
+---
+# Statistical Transformation
+![](images/ggplot5.png)
+--
+
+- The algorithm used to calculate new values for a graph is called a **stat**, short for statistical transformation
+- You can learn which stat a geom uses by inspecting the default value for the `stat` argument in `?geom_bar`
+---
+```{r eval=FALSE}
+ggplot(data = diamonds) + 
+  geom_bar(mapping = aes(x = cut, y = stat(prop), group = 1))
+```
+--
+
+![](images/ggplot6.png)
+--
+To find the variables computed by the stat, look for the help section titled **computed variables**.
+
+---
+class:middle, center
+# End of Session 2
+---
+
 # What can we use color for?
 ### $\checkmark$ To distinguish $\color{purple}{\text{groups of data}}$ $\color{orange}{\text{from each other}}$
 ### $\checkmark$ To represent data values
